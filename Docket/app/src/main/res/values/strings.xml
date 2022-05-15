@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MadProj</string>
+    <string name="signup">signup</string>
+    <string name="login">login</string>
+</resources>
