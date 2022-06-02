@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/APP-DEV/Mad_Project_Application/Docket/app/src/main/res/layout/activity_dashboard.xml" value="0.27447916666666666" />
+        <entry key="..\:/APP-DEV/Mad_Project_Application/Docket/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/APP-DEV/Mad_Project_Application/Docket/app/src/main/res/layout/activity_main.xml" value="0.1671195652173913" />
+        <entry key="..\:/APP-DEV/Mad_Project_Application/Docket/app/src/main/res/layout/activity_sign_up.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/avina/MadProj/app/src/main/res/drawable/gradbutton.xml" value="0.2235" />
         <entry key="..\:/Users/avina/MadProj/app/src/main/res/drawable/gradient_background.xml" value="0.2235" />
         <entry key="..\:/Users/avina/MadProj/app/src/main/res/font/pacifico.xml" value="0.2640625" />

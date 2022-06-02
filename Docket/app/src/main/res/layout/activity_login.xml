@@ -78,7 +78,7 @@
         app:layout_constraintVertical_bias="0.0"></View>
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/userLoginEmail"
         android:layout_width="381dp"
         android:layout_height="56dp"
         android:background="@drawable/img_5"
@@ -95,7 +95,7 @@
         app:layout_constraintVertical_bias="0.567" />
 
     <EditText
-        android:id="@+id/editTextTextPassword3"
+        android:id="@+id/userLoginPassword"
         android:layout_width="375dp"
         android:layout_height="55dp"
         android:layout_marginTop="16dp"
@@ -112,7 +112,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/button2"
+        android:id="@+id/loginBtn"
         android:layout_width="206dp"
         android:layout_height="75dp"
         android:layout_marginTop="32dp"
@@ -121,7 +121,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3"
+        app:layout_constraintTop_toBottomOf="@+id/userLoginPassword"
         app:layout_constraintVertical_bias="0.0" />
 
     <androidx.appcompat.widget.AppCompatImageButton
@@ -135,7 +135,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/loginBtn"
         app:layout_constraintVertical_bias="0.041" />
 
     <androidx.appcompat.widget.AppCompatImageButton
@@ -164,7 +164,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/loginBtn"
         app:layout_constraintVertical_bias="0.0" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
