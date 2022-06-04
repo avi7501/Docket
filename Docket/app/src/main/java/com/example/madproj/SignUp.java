@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -33,6 +34,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
     //variables for user registration input
     private EditText userNameInput,userEmailInput,userPasswordInput,confirmPasswordInput;
     private ProgressBar progressBar;
+    private RadioButton termsAndCondition;
     ImageView submitButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         confirmPasswordInput = findViewById(R.id.confirmPassword);
         progressBar = findViewById(R.id.progressBar);
         submitButton = (ImageView) findViewById(R.id.submitBtn);
+        termsAndCondition = findViewById(R.id.radioButton);
         //Adding Click Listener To Button
         submitButton.setOnClickListener(this);
     }
@@ -144,6 +147,12 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         {
             confirmPasswordInput.setError("Confirm Password Is Not Matching With The User Password");
             confirmPasswordInput.requestFocus();
+            return;
+        }
+        if(termsAndCondition.isChecked() == false)
+        {
+            termsAndCondition.setError("Please Agree To Terms And Condition");
+            termsAndCondition.requestFocus();
             return;
         }
 
