@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -19,12 +21,14 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Dashboard extends AppCompatActivity implements View.OnClickListener {
     //variables Used To Get The Data
     private Button logout,googleSignOut;
+
     FirebaseAuth firebaseAuth;
     GoogleSignInClient googleSignInClient;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+
 
         //Intializing Variables
         logout = findViewById(R.id.signOut);

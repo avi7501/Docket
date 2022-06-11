@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "441443608933",
+    "firebase_url": "https://mad-project-ffa71-default-rtdb.firebaseio.com",
     "project_id": "mad-project-ffa71",
     "storage_bucket": "mad-project-ffa71.appspot.com"
   },
@@ -13,6 +14,22 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "441443608933-799u0sd7a7gqvlg9hhb8l0smjed1279l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.madproj",
+            "certificate_hash": "ef19e6c77da1b43cd28ef5ba0fc8d213998fc85d"
+          }
+        },
+        {
+          "client_id": "441443608933-9941rgkjg8iltjnia42fqvrkgnfmfd6b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.madproj",
+            "certificate_hash": "59208ef6f5409002ee006c218343738d870eb945"
+          }
+        },
         {
           "client_id": "441443608933-nrps0nd18j95ugotf1mei7cc5elg6d5t.apps.googleusercontent.com",
           "client_type": 3
