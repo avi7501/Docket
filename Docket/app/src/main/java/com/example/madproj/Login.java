@@ -44,6 +44,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     GoogleSignInClient googleSignInClient;
     FirebaseAuth firebaseAuth;
     //End Of Variables For Google SignIn
+    //Variables To Use Bundle Data
+//    String userNameToDisplay;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -262,6 +264,12 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     {
                         Toast.makeText(Login.this, "Successfully Logged In", Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(Login.this,Dashboard.class);
+                        /*Testing Bundle*/
+//                        Bundle bundle1 = getIntent().getBundleExtra("data1");
+//                        Bundle bundle2 = new Bundle();
+//                        bundle2.putString("userName",bundle1.getString("userName"));
+//                        i.putExtra("data2",bundle2);
+                        /*End Of Testing Bundle*/
                         startActivity(i);
                     }else{
                         user.sendEmailVerification();
