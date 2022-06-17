@@ -33,7 +33,7 @@ import java.util.ArrayList;
 
 public class Dashboard extends AppCompatActivity implements View.OnClickListener {
     //variables Used To Get The Data
-    private Button logout,googleSignOut;
+//    private Button logout,googleSignOut;
 
     // Widgets
     RecyclerView recyclerView;
@@ -46,7 +46,7 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
     private RecycleAdapter recyclerAdapter;
     private Context mContext;
     TextView userNameDisplayText;
-    ImageView userProfileImage;
+    ImageView userProfileImage,acc1,accdp;
 
 
     FirebaseAuth firebaseAuth;
@@ -59,14 +59,13 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-
-
         //Intializing Variables
-        logout = findViewById(R.id.signOut);
-        googleSignOut = findViewById(R.id.googleSignOutBtn);
-        //Adding OnClickListener
-        logout.setOnClickListener(this);
-
+//        logout = findViewById(R.id.signOut);
+//        googleSignOut = findViewById(R.id.googleSignOutBtn);
+//        //Adding OnClickListener
+//        logout.setOnClickListener(this);
+        acc1=(ImageView) findViewById(R.id.button8);
+        acc1.setOnClickListener(this);
         // Initialize firebase auth
         firebaseAuth=FirebaseAuth.getInstance();
 
@@ -76,6 +75,7 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
         //Intializing Variable To Display UserName
         userNameDisplayText = findViewById(R.id.userDisplayName);
         userProfileImage = findViewById(R.id.userProfileImage);
+        accdp =findViewById(R.id.imageView9);
 
         /*--Intializing Variables For Card Look--*/
         recyclerView = findViewById(R.id.courseListView);
@@ -99,34 +99,34 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
         /*--End Of Variable Intialization--*/
         //GOOGLE SIGN OUT
         // Initialize sign in client
-        googleSignInClient= GoogleSignIn.getClient(Dashboard.this
-                , GoogleSignInOptions.DEFAULT_SIGN_IN);
-        googleSignOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Sign out from google
-                googleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        // Check condition
-                        if(task.isSuccessful())
-                        {
-                            // When task is successful
-                            // Sign out from firebase
-                            firebaseAuth.signOut();
-
-                            // Display Toast
-                            Toast.makeText(getApplicationContext(), "Logout successful", Toast.LENGTH_SHORT).show();
-                            Intent i = new Intent(Dashboard.this,MainActivity.class);
-                            startActivity(i);
-
-                            // Finish activity
-                            finish();
-                        }
-                    }
-                });
-            }
-        });
+//        googleSignInClient= GoogleSignIn.getClient(Dashboard.this
+//                , GoogleSignInOptions.DEFAULT_SIGN_IN);
+//        googleSignOut.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                // Sign out from google
+//                googleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<Void> task) {
+//                        // Check condition
+//                        if(task.isSuccessful())
+//                        {
+//                            // When task is successful
+//                            // Sign out from firebase
+//                            firebaseAuth.signOut();
+//
+//                            // Display Toast
+//                            Toast.makeText(getApplicationContext(), "Logout successful", Toast.LENGTH_SHORT).show();
+//                            Intent i = new Intent(Dashboard.this,MainActivity.class);
+//                            startActivity(i);
+//
+//                            // Finish activity
+//                            finish();
+//                        }
+//                    }
+//                });
+//            }
+//        });
 
         /* Setting UserName And Profile */
         if(firebaseUser != null)
@@ -135,6 +135,9 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
             Glide.with(Dashboard.this)
                     .load(firebaseUser.getPhotoUrl())
                     .into(userProfileImage);
+            Glide.with(Dashboard.this)
+                    .load(firebaseUser.getPhotoUrl())
+                    .into(accdp);
         }
 //        else
 //        {
@@ -143,23 +146,26 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
 //        }
 
     }
-
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.signOut:
-                //Calling SignOut User Method
-                signOutUser();
+            case R.id.button8:
+                Intent it = new Intent(Dashboard.this,AccSettings.class);
+                startActivity(it);
                 break;
+//            case R.id.signOut:
+//                //Calling SignOut User Method
+//                signOutUser();
+//                break;
         }
     }
 
-    private void signOutUser() {
-        FirebaseAuth.getInstance().signOut();
-        Toast.makeText(this, "Successfully Signed Out", Toast.LENGTH_SHORT).show();
-        Intent i = new Intent(Dashboard.this,MainActivity.class);
-        startActivity(i);
-    }
+//    private void signOutUser() {
+//        FirebaseAuth.getInstance().signOut();
+//        Toast.makeText(this, "Successfully Signed Out", Toast.LENGTH_SHORT).show();
+//        Intent i = new Intent(Dashboard.this,MainActivity.class);
+//        startActivity(i);
+//    }
 
     /*-- Methods Used For Card View --*/
     private void GetDataFromFirebase() {

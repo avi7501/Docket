@@ -8,37 +8,6 @@
     tools:context=".Dashboard">
 
 
-    <Button
-        android:id="@+id/signOut"
-        android:layout_width="86dp"
-        android:layout_height="40dp"
-        android:backgroundTint="#53F380"
-        android:text="SIGN OUT"
-        android:textColor="#FFFFFF"
-        android:textSize="10sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.673"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.086" />
-
-    <Button
-        android:id="@+id/googleSignOutBtn"
-        android:layout_width="74dp"
-        android:layout_height="30dp"
-        android:background="#53F380"
-        android:text="G SIGN OUT"
-        android:textColor="#F8F8F8"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.084" />
-
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="170dp"
@@ -80,20 +49,20 @@
         app:layout_constraintTop_toTopOf="@+id/imageView6"
         app:layout_constraintVertical_bias="0.783" />
 
+    <!-- Testing Course Cards -->
+
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/userProfileImage"
-        android:layout_width="161dp"
-        android:layout_height="160dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.916"
+        app:layout_constraintHorizontal_bias="0.869"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.201"
-
+        app:layout_constraintVertical_bias="0.202"
         app:shapeAppearanceOverlay="@style/Circular" />
 
-    <!-- Testing Course Cards -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/halfScreenGuideline"
         android:layout_width="wrap_content"
@@ -101,32 +70,28 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.4" />
 
+    <!-- End Of Testing Course Cards -->
+
+
     <FrameLayout
         android:id="@+id/content_frame"
-        android:layout_width="0dp"
+        android:layout_width="411dp"
         android:layout_height="0dp"
+        android:background="#979aaa"
         app:layout_constraintBottom_toTopOf="@+id/courseListView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="#979aaa"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/courseListView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constrainedHeight="true"
-        app:layout_constraintVertical_bias="1.0"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
         android:clipToPadding="false"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toTopOf="@+id/imageView7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/halfScreenGuideline" />
-    <!-- End Of Testing Course Cards -->
-
-
 
     <ImageView
         android:id="@+id/imageView7"
@@ -135,6 +100,7 @@
         android:layout_height="97dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
@@ -173,12 +139,12 @@
         android:layout_width="47dp"
         android:layout_height="43dp"
         android:layout_marginBottom="16dp"
-
+        android:alpha="0"
+        android:background="@drawable/round_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.898"
+        app:layout_constraintHorizontal_bias="0.896"
         app:layout_constraintStart_toStartOf="@+id/imageView7"
-
         app:layout_constraintTop_toTopOf="@+id/imageView7"
         app:layout_constraintVertical_bias="0.447" />
 
@@ -205,11 +171,23 @@
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/courseListView"
+        app:layout_constraintBottom_toTopOf="@+id/content_frame"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.113"
+        app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintVertical_bias="0.553" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageView9"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView7"
+        app:layout_constraintVertical_bias="0.32"
+        app:shapeAppearanceOverlay="@style/Circular" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
