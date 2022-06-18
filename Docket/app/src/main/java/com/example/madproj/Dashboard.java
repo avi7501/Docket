@@ -176,10 +176,12 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 clearAll();
                 for(DataSnapshot snapshot1 : snapshot.getChildren()){
-                    CourseData messages = new CourseData();
-                    messages.setCourse_name(snapshot1.child("courseName").getValue().toString());
-                    messages.setCourse_video_url(snapshot1.child("videoThumbnailUrl").getValue().toString());
-                    courseList.add(messages);
+                    CourseData courseDetails = new CourseData();
+                    courseDetails.setCourse_name(snapshot1.child("courseName").getValue().toString());
+                    courseDetails.setCourse_video_thumbnail_url(snapshot1.child("videoThumbnailUrl").getValue().toString());
+                    courseDetails.setCourse_video_url(snapshot1.child("videoUrl").getValue().toString());
+                    courseDetails.setOrganiser(snapshot1.child("organiser").getValue().toString());
+                    courseList.add(courseDetails);
                 }
                 recyclerAdapter = new RecycleAdapter(getApplicationContext(), courseList);
                 recyclerView.setAdapter( recyclerAdapter);
