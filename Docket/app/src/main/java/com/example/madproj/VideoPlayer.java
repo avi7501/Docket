@@ -23,10 +23,15 @@ public class VideoPlayer extends AppCompatActivity {
             @Override
             public void onReady(@NonNull YouTubePlayer youTubePlayer) {
                 Bundle bundle = getIntent().getBundleExtra("allCourseData");
+                //Gets The CourseName From The Bundler
                 String courseName = bundle.getString("courseName");
+                //Gets The VideoId From The Bundler
                 String videoId = bundle.getString("videoId");
+                //Gets The Organiser Name From The Bundler
                 String organiser = bundle.getString("courseOrganization");
                 youTubePlayer.loadVideo(videoId, 0);
+
+                /* Above Data Can Be Added To An Text View With .setText Property */
             }
         });
     }
