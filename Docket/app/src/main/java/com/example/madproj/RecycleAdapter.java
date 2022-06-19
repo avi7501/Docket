@@ -38,7 +38,8 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.goToCourse.setTag(position);
-        holder.textView.setText(courseList.get(position).getCourse_name());
+        holder.goToCourse.setText(courseList.get(position).getCourse_name());
+        holder.textView.setText("By : "+courseList.get(position).getOrganiser());
         Glide.with(mContext).load(courseList.get(position).getCourse_video_thumbnail_url()).into(holder.imageView);
 //        String CourseName = holder.textView.getText().toString();
 //        System.out.println("Course Name : "+CourseName);
@@ -78,7 +79,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
         public ViewHolder(@NonNull View itemView){
             super(itemView);
             imageView = itemView.findViewById(R.id.courseImageView);
-            textView = itemView.findViewById(R.id.courseNameView);
+            textView = itemView.findViewById(R.id.organiser);
             //testing
             goToCourse = itemView.findViewById(R.id.goToCourse);
         }

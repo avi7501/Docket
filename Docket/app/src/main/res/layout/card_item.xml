@@ -24,39 +24,36 @@
             cardView:layout_constraintTop_toTopOf="parent"
             tools:background="@tools:sample/backgrounds/scenic" />
 
-        <TextView
-            android:id="@+id/courseNameView"
-            android:layout_width="217dp"
-            android:layout_height="42dp"
-            android:layout_margin="8dp"
-            android:background="#FFFFFF"
-            android:fontFamily="@font/poppins"
-            android:gravity="center_vertical"
-            android:lines="1"
-            android:padding="5dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            android:textColor="@android:color/black"
-            android:textStyle="bold"
-            cardView:layout_constraintBottom_toBottomOf="parent"
-            cardView:layout_constraintHorizontal_bias="0.36"
-            cardView:layout_constraintLeft_toRightOf="@id/courseImageView"
-            cardView:layout_constraintRight_toRightOf="parent"
-            cardView:layout_constraintTop_toTopOf="parent"
-            cardView:layout_constraintVertical_bias="0.0"
-            tools:text="@tools:sample/full_names" />
-
         <Button
             android:id="@+id/goToCourse"
-            android:layout_width="159dp"
-            android:layout_height="40dp"
-            android:backgroundTint="#0FFFFFFF"
-            android:text="Go To Course"
+            android:layout_width="232dp"
+            android:layout_height="43dp"
+            android:background="#00FFFEFE"
+            android:fontFamily="@font/poppins"
+            android:text="hi"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
             android:textColor="#050505"
+            android:textSize="14sp"
             cardView:layout_constraintBottom_toBottomOf="parent"
             cardView:layout_constraintEnd_toEndOf="parent"
-            cardView:layout_constraintHorizontal_bias="0.104"
+            cardView:layout_constraintHorizontal_bias="0.538"
             cardView:layout_constraintStart_toEndOf="@+id/courseImageView"
-            cardView:layout_constraintTop_toBottomOf="@+id/courseNameView"
-            cardView:layout_constraintVertical_bias="0.0" />
+            cardView:layout_constraintTop_toTopOf="parent"
+            cardView:layout_constraintVertical_bias="0.148" />
+
+        <TextView
+            android:id="@+id/organiser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="hi"
+            android:textSize="10sp"
+            cardView:layout_constraintBottom_toBottomOf="parent"
+            cardView:layout_constraintEnd_toEndOf="parent"
+            cardView:layout_constraintHorizontal_bias="0.029"
+            cardView:layout_constraintStart_toEndOf="@+id/courseImageView"
+            cardView:layout_constraintTop_toTopOf="parent"
+            cardView:layout_constraintVertical_bias="0.783" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

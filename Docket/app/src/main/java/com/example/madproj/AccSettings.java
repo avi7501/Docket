@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,12 +30,12 @@ public class AccSettings extends AppCompatActivity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_acc_settings2);
+        setContentView(R.layout.activity_acc_settings);
         logout = (ImageView) findViewById(R.id.logout);
-        accdp=findViewById(R.id.imageView9);
-        userProfileImage=findViewById(R.id.imageView11);
-        userNameDisplayText=findViewById(R.id.textView15);
-        home=(ImageView)findViewById(R.id.button4);
+        accdp=findViewById(R.id.navDp);
+        userProfileImage=findViewById(R.id.userDp);
+        userNameDisplayText=findViewById(R.id.userName);
+        home=(ImageView)findViewById(R.id.homeBtn);
         home.setOnClickListener(this);
         firebaseAuth=FirebaseAuth.getInstance();
 
@@ -86,7 +85,7 @@ public class AccSettings extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick(View v){
         switch (v.getId()){
-            case R.id.button4:
+            case R.id.homeBtn:
                 Intent i = new Intent(AccSettings.this,Dashboard.class);
                 startActivity(i);
         }
