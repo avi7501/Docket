@@ -34,7 +34,6 @@ import java.util.ArrayList;
 public class Dashboard extends AppCompatActivity implements View.OnClickListener {
     //variables Used To Get The Data
 //    private Button logout,googleSignOut;
-
     // Widgets
     RecyclerView recyclerView;
 
@@ -127,22 +126,62 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
 //                });
 //            }
 //        });
+        //testing
 
+        Bundle bundle = getIntent().getExtras();
+//        Login logObj = new Login();
+        boolean isGAuth = bundle.getBoolean("isGAuth");
+        System.out.println("Auth Value :"+isGAuth);
         /* Setting UserName And Profile */
-        if(firebaseUser != null)
+        if(isGAuth)
         {
-            userNameDisplayText.setText(firebaseUser.getDisplayName());
-            Glide.with(Dashboard.this)
-                    .load(firebaseUser.getPhotoUrl())
-                    .into(userProfileImage);
-            Glide.with(Dashboard.this)
-                    .load(firebaseUser.getPhotoUrl())
-                    .into(accdp);
+            if(firebaseUser != null)
+            {
+                userNameDisplayText.setText(firebaseUser.getDisplayName());
+                Glide.with(Dashboard.this)
+                        .load(firebaseUser.getPhotoUrl())
+                        .into(userProfileImage);
+                Glide.with(Dashboard.this)
+                        .load(firebaseUser.getPhotoUrl())
+                        .into(accdp);
+//
+            }
         }
+        else
+        {
+            myRef.child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    userNameDisplayText.setText(snapshot.child("user_name").getValue().toString());
+                    System.out.println("Testing : "+snapshot.child("user_name").getValue().toString());
+                    Glide.with(Dashboard.this)
+                            .load(R.drawable.def_prof)
+                            .into(userProfileImage);
+                    Glide.with(Dashboard.this)
+                            .load(R.drawable.def_prof)
+                            .into(accdp);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+
 //        else
 //        {
-//            Bundle bundle = getIntent().getBundleExtra("data2");
-//            userNameDisplayText.setText(bundle.getString("userName"));
+//            myRef.child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+//                @Override
+//                public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                    System.out.println("Testing : "+snapshot.child("user_name").getValue().toString());
+//                }
+//
+//                @Override
+//                public void onCancelled(@NonNull DatabaseError error) {
+//
+//                }
+//            });
 //        }
 
     }
@@ -151,6 +190,8 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
         switch (view.getId()){
             case R.id.button8:
                 Intent it = new Intent(Dashboard.this,AccSettings.class);
+                Bundle bundle = getIntent().getExtras();
+                it.putExtra("isGAuth",bundle.getBoolean("isGAuth"));
                 startActivity(it);
                 break;
 //            case R.id.signOut:

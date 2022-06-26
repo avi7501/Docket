@@ -3,6 +3,7 @@ package com.example.madproj;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -35,6 +36,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    boolean gAuth;
     Button signup, login;
 
     //Variables For Google SignIn
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //End Of Variables For Google SignIn
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //        transparentStatusBarAndNavigation();
@@ -87,8 +90,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (firebaseUser != null) {
             // When user already sign in
             // redirect to profile activity
-            startActivity(new Intent(MainActivity.this, Dashboard.class)
-                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+            gAuth = true;
+            Intent i = new Intent(MainActivity.this,Dashboard.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            i.putExtra("isGAuth",gAuth);
+            startActivity(i);
         }
         /***----------------------End Of Google Sign Part------------------***/
     }
@@ -110,6 +116,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             // check condition
             if (signInAccountTask.isSuccessful()) {
+                gAuth = true;
                 // When google sign in successful
                 // Initialize string
                 Toast.makeText(this, "Works Macha", Toast.LENGTH_SHORT).show();
@@ -137,9 +144,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                         if (task.isSuccessful()) {
                                             // When task is successful
                                             // Redirect to profile activity
-                                            startActivity(new Intent(MainActivity.this
-                                                    , Dashboard.class)
-                                                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                                            Intent i = new Intent(MainActivity.this,Dashboard.class);
+                                            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                            i.putExtra("isGAuth",gAuth);
+                                            startActivity(i);
                                             // Display Toast
                                             displayToast("Firebase authentication successful");
                                         } else {
@@ -157,6 +165,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             } else {
                 Toast.makeText(this, "Failed Badly", Toast.LENGTH_LONG).show();
+                gAuth = false;
             }
         }
     }

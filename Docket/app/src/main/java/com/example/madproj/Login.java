@@ -35,6 +35,7 @@ import java.util.Objects;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
     // Variables Used To Get The Data
+    boolean gAuth;
     private EditText userLoginEmailInput,userLoginPasswordInput;
     private ImageView signInButton;
     private FirebaseAuth mAuth;
@@ -93,8 +94,15 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         {
             // When user already sign in
             // redirect to profile activity
-            startActivity(new Intent(Login.this,Dashboard.class)
-                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+            gAuth = true;
+//            startActivity(new Intent(Login.this,Dashboard.class)
+//                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+            //Testing
+            Intent i = new Intent(Login.this,Dashboard.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            i.putExtra("isGAuth",gAuth);
+            startActivity(i);
+            //End Of Testing
         }
         /***-------------------------End Of Google Sign Part------------------------------------***/
     }
@@ -117,6 +125,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             // check condition
             if(signInAccountTask.isSuccessful())
             {
+                gAuth = true;
                 // When google sign in successful
                 // Initialize string
                 Toast.makeText(this, "Works Macha", Toast.LENGTH_SHORT).show();
@@ -146,9 +155,16 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                                         {
                                             // When task is successful
                                             // Redirect to profile activity
-                                            startActivity(new Intent(Login.this
-                                                    ,Dashboard.class)
-                                                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                                            //testing
+                                            System.out.println("Google Auth : "+gAuth);
+//                                            startActivity(new Intent(Login.this
+//                                                    ,Dashboard.class)
+//                                                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                                            Intent i = new Intent(Login.this,Dashboard.class);
+                                            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                            i.putExtra("isGAuth",gAuth);
+                                            startActivity(i);
+                                            //End Of Testing
                                             // Display Toast
                                             displayToast("Firebase authentication successful");
                                         }
@@ -171,6 +187,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             }else
             {
                 Toast.makeText(this, "Failed Badly", Toast.LENGTH_LONG).show();
+                gAuth = false;
             }
         }
     }
@@ -263,7 +280,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     if(user.isEmailVerified())
                     {
                         Toast.makeText(Login.this, "Successfully Logged In", Toast.LENGTH_SHORT).show();
+                        gAuth = false;
                         Intent i = new Intent(Login.this,Dashboard.class);
+                        i.putExtra("isGAuth",gAuth);
                         /*Testing Bundle*/
 //                        Bundle bundle1 = getIntent().getBundleExtra("data1");
 //                        Bundle bundle2 = new Bundle();

@@ -35,4 +35,11 @@ public class VideoPlayer extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onBackPressed() {
+        //Execute your code here
+        youTubePlayerView.release();
+        finish();
+
+    }
 }
