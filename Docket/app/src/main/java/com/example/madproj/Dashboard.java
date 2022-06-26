@@ -222,6 +222,7 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
                     courseDetails.setCourse_video_thumbnail_url(snapshot1.child("videoThumbnailUrl").getValue().toString());
                     courseDetails.setCourse_video_url(snapshot1.child("videoUrl").getValue().toString());
                     courseDetails.setOrganiser(snapshot1.child("organiser").getValue().toString());
+                    courseDetails.setCourse_description(snapshot1.child("courseDescription").getValue().toString());
                     courseList.add(courseDetails);
                 }
                 recyclerAdapter = new RecycleAdapter(getApplicationContext(), courseList);

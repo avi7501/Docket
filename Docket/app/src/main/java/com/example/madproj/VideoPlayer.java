@@ -12,7 +12,7 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTube
 
 public class VideoPlayer extends AppCompatActivity {
     YouTubePlayerView youTubePlayerView;
-    TextView CourseTitle,Organiser,CourseDesc;
+    TextView CourseTitle,Organiser,CourseDesc,courseInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,6 @@ public class VideoPlayer extends AppCompatActivity {
         CourseTitle=findViewById(R.id.CourseTitle);
         Organiser= findViewById(R.id.Organiser);
         CourseDesc=findViewById(R.id.CourseDesc);
-
         youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
             @Override
             public void onReady(@NonNull YouTubePlayer youTubePlayer) {
@@ -34,12 +33,14 @@ public class VideoPlayer extends AppCompatActivity {
                 String videoId = bundle.getString("videoId");
                 //Gets The Organiser Name From The Bundler
                 String organiser = bundle.getString("courseOrganization");
+                //Gets The CourseDescription From The Bundler
+                String courseDescription = bundle.getString("courseDescription");
                 youTubePlayer.loadVideo(videoId, 0);
 
                 /* Above Data Can Be Added To An Text View With .setText Property */
                 CourseTitle.setText(courseName);
                 Organiser.setText("By"+organiser);
-                CourseDesc.setText("Description:");
+                CourseDesc.setText("Description");
             }
         });
     }

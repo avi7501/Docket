@@ -283,12 +283,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                         gAuth = false;
                         Intent i = new Intent(Login.this,Dashboard.class);
                         i.putExtra("isGAuth",gAuth);
-                        /*Testing Bundle*/
-//                        Bundle bundle1 = getIntent().getBundleExtra("data1");
-//                        Bundle bundle2 = new Bundle();
-//                        bundle2.putString("userName",bundle1.getString("userName"));
-//                        i.putExtra("data2",bundle2);
-                        /*End Of Testing Bundle*/
                         startActivity(i);
                     }else{
                         user.sendEmailVerification();

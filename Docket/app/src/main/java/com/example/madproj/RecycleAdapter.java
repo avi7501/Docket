@@ -52,12 +52,13 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
                 String courseName = courseList.get(cardPosition).getCourse_name();
                 String videoId =courseList.get(cardPosition).getCourse_video_url().split("=",2)[1];
                 String courseOrganization = courseList.get(cardPosition).getOrganiser();
-//                String courseDesc=courseList.get(cardPosition)
+                String courseDescription=courseList.get(cardPosition).getCourse_description();
                 Intent intent = new Intent(mContext,VideoPlayer.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("courseName",courseName);
                 bundle.putString("videoId",videoId);
                 bundle.putString("courseOrganization",courseOrganization);
+                bundle.putString("courseDescription",courseDescription);
                 intent.putExtra("allCourseData",bundle);
                 view.getContext().startActivity(intent);
 //                System.out.println("CourseName : "+courseName);

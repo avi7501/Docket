@@ -1,11 +1,14 @@
 package com.example.madproj;
 
+
+
 public class CourseData {
     //Model Class
     String course_name;
     String course_video_thumbnail_url;
     String course_video_url;
     String organiser;
+    String course_description;
 
 
     //Constructor
@@ -14,11 +17,12 @@ public class CourseData {
 
     }
 
-    public CourseData(String course_name, String course_video_thumbnail_url,String course_video_url,String organiser) {
+    public CourseData(String course_name, String course_video_thumbnail_url,String course_video_url,String organiser,String course_description) {
         this.course_name = course_name;
         this.course_video_thumbnail_url = course_video_thumbnail_url;
         this.course_video_url = course_video_url;
         this.organiser = organiser;
+        this.course_description = course_description;
     }
 
     public String getCourse_name() {
@@ -42,4 +46,7 @@ public class CourseData {
 
     public String getOrganiser(){return organiser;}
     public void setOrganiser(String organiser){this.organiser = organiser;}
+
+    public String getCourse_description(){return  course_description;}
+    public void setCourse_description(String course_description){this.course_description = course_description;}
 }
