@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
@@ -11,6 +12,7 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTube
 
 public class VideoPlayer extends AppCompatActivity {
     YouTubePlayerView youTubePlayerView;
+    TextView CourseTitle,Organiser,CourseDesc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +20,9 @@ public class VideoPlayer extends AppCompatActivity {
         setContentView(R.layout.activity_video_player);
         youTubePlayerView = findViewById(R.id.youtube_player_view);
         getLifecycle().addObserver(youTubePlayerView);
+        CourseTitle=findViewById(R.id.CourseTitle);
+        Organiser= findViewById(R.id.Organiser);
+        CourseDesc=findViewById(R.id.CourseDesc);
 
         youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
             @Override
@@ -32,6 +37,9 @@ public class VideoPlayer extends AppCompatActivity {
                 youTubePlayer.loadVideo(videoId, 0);
 
                 /* Above Data Can Be Added To An Text View With .setText Property */
+                CourseTitle.setText(courseName);
+                Organiser.setText("By"+organiser);
+                CourseDesc.setText("Description:");
             }
         });
     }

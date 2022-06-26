@@ -49,9 +49,10 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
                 //getting position of the card
                 Integer cardPosition = (Integer) view.getTag();
                 //extracting data from array list to transfer it to video player
-                String courseName = courseList.get(cardPosition).getCourse_video_thumbnail_url();
+                String courseName = courseList.get(cardPosition).getCourse_name();
                 String videoId =courseList.get(cardPosition).getCourse_video_url().split("=",2)[1];
                 String courseOrganization = courseList.get(cardPosition).getOrganiser();
+//                String courseDesc=courseList.get(cardPosition)
                 Intent intent = new Intent(mContext,VideoPlayer.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("courseName",courseName);

@@ -15,9 +15,80 @@
             android:id="@+id/youtube_player_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:videoId=""
-            app:autoPlay="true" />
+            app:autoPlay="true"
+            app:videoId="" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView14"
+                android:layout_width="368dp"
+                android:layout_height="296dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView15"
+                app:srcCompat="@drawable/course_info_button" />
+
+            <ImageView
+                android:id="@+id/imageView15"
+                android:layout_width="380dp"
+                android:layout_height="151dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.516"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.045"
+                app:srcCompat="@drawable/course_info_button" />
+
+            <TextView
+                android:id="@+id/CourseTitle"
+                android:layout_width="351dp"
+                android:layout_height="40dp"
+                android:fontFamily="@font/poppins"
+                android:text="TextView"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+                app:layout_constraintEnd_toEndOf="@+id/imageView15"
+                app:layout_constraintHorizontal_bias="0.866"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView15"
+                app:layout_constraintVertical_bias="0.243" />
+
+            <TextView
+                android:id="@+id/Organiser"
+                android:layout_width="302dp"
+                android:layout_height="26dp"
+                android:fontFamily="@font/poppins"
+
+                android:text="TextView"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+                app:layout_constraintEnd_toEndOf="@+id/imageView15"
+                app:layout_constraintHorizontal_bias="0.294"
+                app:layout_constraintStart_toStartOf="@+id/imageView15"
+                app:layout_constraintTop_toBottomOf="@+id/CourseTitle"
+                app:layout_constraintVertical_bias="0.31" />
+
+            <TextView
+                android:id="@+id/CourseDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+                app:layout_constraintEnd_toEndOf="@+id/imageView14"
+                app:layout_constraintHorizontal_bias="0.054"
+                app:layout_constraintStart_toStartOf="@+id/imageView14"
+                app:layout_constraintTop_toTopOf="@+id/imageView14"
+                app:layout_constraintVertical_bias="0.126" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
 
