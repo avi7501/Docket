@@ -29,7 +29,7 @@ public class AccSettings extends AppCompatActivity implements View.OnClickListen
     private ImageView logout,home,googleSignOut;
     FirebaseAuth firebaseAuth;
     GoogleSignInClient googleSignInClient;
-    TextView userNameDisplayText;
+    TextView userNameDisplayText,userEmailDisplayText;
     ImageView userAccountProfileImage;
     //Firebase
     private DatabaseReference myRef;
@@ -42,6 +42,7 @@ public class AccSettings extends AppCompatActivity implements View.OnClickListen
         accdp=findViewById(R.id.navDp);
         userAccountProfileImage=findViewById(R.id.userDp);
         userNameDisplayText=findViewById(R.id.userName);
+        userEmailDisplayText = findViewById(R.id.userDisplayEmail);
         home=(ImageView)findViewById(R.id.homeBtn);
         home.setOnClickListener(this);
         firebaseAuth=FirebaseAuth.getInstance();
@@ -100,6 +101,7 @@ public class AccSettings extends AppCompatActivity implements View.OnClickListen
             if(firebaseUser != null)
             {
                 userNameDisplayText.setText(firebaseUser.getDisplayName());
+                userEmailDisplayText.setText(firebaseUser.getEmail());
                 Glide.with(AccSettings.this)
                         .load(firebaseUser.getPhotoUrl())
                         .into(userAccountProfileImage);
@@ -120,6 +122,7 @@ public class AccSettings extends AppCompatActivity implements View.OnClickListen
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     userNameDisplayText.setText(snapshot.child("user_name").getValue().toString());
+                    userEmailDisplayText.setText(snapshot.child("user_email").getValue().toString());
                     System.out.println("Testing : "+snapshot.child("user_name").getValue().toString());
 
                 }
