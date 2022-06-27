@@ -12,7 +12,7 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTube
 
 public class VideoPlayer extends AppCompatActivity {
     YouTubePlayerView youTubePlayerView;
-    TextView CourseTitle,Organiser,CourseDesc,courseInfo;
+    TextView CourseTitle,Organiser,CourseDesc,courseDisplayDetail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,7 @@ public class VideoPlayer extends AppCompatActivity {
         CourseTitle=findViewById(R.id.CourseTitle);
         Organiser= findViewById(R.id.Organiser);
         CourseDesc=findViewById(R.id.CourseDesc);
+        courseDisplayDetail = findViewById(R.id.courseDisplayDetail);
         youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
             @Override
             public void onReady(@NonNull YouTubePlayer youTubePlayer) {
@@ -41,6 +42,7 @@ public class VideoPlayer extends AppCompatActivity {
                 CourseTitle.setText(courseName);
                 Organiser.setText("By"+organiser);
                 CourseDesc.setText("Description");
+                courseDisplayDetail.setText(courseDescription);
             }
         });
     }

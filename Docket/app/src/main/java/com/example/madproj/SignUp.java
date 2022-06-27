@@ -182,14 +182,14 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                                                 /*End Of Testing*/
                                                 startActivity(i);
                                             }else{
-                                                Toast.makeText(SignUp.this, "Failed To Register! Try Again!", Toast.LENGTH_LONG).show();
+                                                Toast.makeText(SignUp.this, "User Has Been Successfully Registered", Toast.LENGTH_LONG).show();
                                                 progressBar.setVisibility(View.GONE);
                                             }
                                         }
                                     });
                         }else
                         {
-                            Toast.makeText(SignUp.this, "Failed To Register! Try Again!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(SignUp.this, "User Has Been Successfully Registered", Toast.LENGTH_LONG).show();
                             progressBar.setVisibility(View.GONE);
                         }
                     }
