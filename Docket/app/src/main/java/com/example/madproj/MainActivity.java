@@ -111,18 +111,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             Task<GoogleSignInAccount> signInAccountTask = GoogleSignIn
                     .getSignedInAccountFromIntent(data);
-            Toast.makeText(this, "Data" + signInAccountTask, Toast.LENGTH_LONG).show();
-            Toast.makeText(this, "result" + signInAccountTask.isSuccessful(), Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "Data" + signInAccountTask, Toast.LENGTH_LONG).show();
+//            Toast.makeText(this, "result" + signInAccountTask.isSuccessful(), Toast.LENGTH_SHORT).show();
 
             // check condition
             if (signInAccountTask.isSuccessful()) {
                 gAuth = true;
                 // When google sign in successful
                 // Initialize string
-                Toast.makeText(this, "Works Macha", Toast.LENGTH_SHORT).show();
-                String s = "Google sign in successful";
+
+//                String s = "Google sign in successful";
                 // Display Toast
-                displayToast(s);
+//                displayToast(s);
                 // Initialize sign in account
                 try {
                     // Initialize sign in account
@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                             i.putExtra("isGAuth",gAuth);
                                             startActivity(i);
                                             // Display Toast
-                                            displayToast("Firebase authentication successful");
+                                            displayToast("Successfully Logged In");
                                         } else {
                                             // When task is unsuccessful
                                             // Display Toast

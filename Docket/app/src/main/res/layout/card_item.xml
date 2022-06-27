@@ -26,7 +26,7 @@
 
         <Button
             android:id="@+id/goToCourse"
-            android:layout_width="232dp"
+            android:layout_width="220dp"
             android:layout_height="43dp"
             android:background="#00FFFEFE"
             android:fontFamily="@font/poppins"
@@ -51,7 +51,7 @@
             android:textSize="10sp"
             cardView:layout_constraintBottom_toBottomOf="parent"
             cardView:layout_constraintEnd_toEndOf="parent"
-            cardView:layout_constraintHorizontal_bias="0.029"
+            cardView:layout_constraintHorizontal_bias="0.059"
             cardView:layout_constraintStart_toEndOf="@+id/courseImageView"
             cardView:layout_constraintTop_toTopOf="parent"
             cardView:layout_constraintVertical_bias="0.783" />

@@ -119,8 +119,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
             Task<GoogleSignInAccount> signInAccountTask=GoogleSignIn
                     .getSignedInAccountFromIntent(data);
-            Toast.makeText(this, "Data"+signInAccountTask, Toast.LENGTH_LONG).show();
-            Toast.makeText(this, "result"+signInAccountTask.isSuccessful(), Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "Data"+signInAccountTask, Toast.LENGTH_LONG).show();
+//            Toast.makeText(this, "result"+signInAccountTask.isSuccessful(), Toast.LENGTH_SHORT).show();
 
             // check condition
             if(signInAccountTask.isSuccessful())
@@ -128,10 +128,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 gAuth = true;
                 // When google sign in successful
                 // Initialize string
-                Toast.makeText(this, "Works Macha", Toast.LENGTH_SHORT).show();
-                String s="Google sign in successful";
+//                Toast.makeText(this, "Works Macha", Toast.LENGTH_SHORT).show();
+//                String s="Google sign in successful";
                 // Display Toast
-                displayToast(s);
+//                displayToast(s);
                 // Initialize sign in account
                 try {
                     // Initialize sign in account
@@ -166,7 +166,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                                             startActivity(i);
                                             //End Of Testing
                                             // Display Toast
-                                            displayToast("Firebase authentication successful");
+                                            displayToast("Successfully Logged In");
                                         }
                                         else
                                         {
