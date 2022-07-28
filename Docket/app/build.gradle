@@ -49,4 +49,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:11.0.1'
 //    implementation 'com.etebarian:meow-bottom-navigation-java:1.2.0'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.24'
+
 }

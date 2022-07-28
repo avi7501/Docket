@@ -34,7 +34,10 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
 
         return new ViewHolder(view);
     }
-
+    public void setfilteredList(ArrayList<CourseData> filteredList){
+        this.courseList=filteredList;
+        notifyDataSetChanged();
+    }
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.goToCourse.setTag(position);

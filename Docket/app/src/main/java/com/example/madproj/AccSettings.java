@@ -42,10 +42,22 @@ public class AccSettings extends AppCompatActivity implements View.OnClickListen
         accdp=findViewById(R.id.navDp);
         userAccountProfileImage=findViewById(R.id.userDp);
         userNameDisplayText=findViewById(R.id.userName);
+        userNameDisplayText.setSelected(true);
         userEmailDisplayText = findViewById(R.id.userDisplayEmail);
+        userEmailDisplayText.setSelected(true);
         home=(ImageView)findViewById(R.id.homeBtn);
         home.setOnClickListener(this);
         firebaseAuth=FirebaseAuth.getInstance();
+        ImageView search =(ImageView)findViewById(R.id.searchbtn);
+        search.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent i =new Intent(AccSettings.this,Search.class);
+                Bundle bundle = getIntent().getExtras();
+                i.putExtra("isGAuth",bundle.getBoolean("isGAuth"));
+                startActivity(i);
+            }
+        });
 
         // Initialize firebase user
         FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();

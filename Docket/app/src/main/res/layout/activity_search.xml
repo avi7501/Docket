@@ -7,6 +7,18 @@
     tools:context=".Search">
 
     <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="28dp"
+        android:layout_height="23dp"
+        app:layout_constraintBottom_toTopOf="@+id/searchView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.368"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.758"
+        app:srcCompat="@drawable/search" />
+
+    <ImageView
         android:id="@+id/imageView7"
 
         android:layout_width="417dp"
@@ -19,7 +31,7 @@
 
 
     <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/button4"
+        android:id="@+id/homebtn"
         android:layout_width="47dp"
         android:layout_height="43dp"
         android:layout_marginBottom="16dp"
@@ -34,7 +46,7 @@
 
 
     <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/button7"
+        android:id="@+id/searchbtn"
         android:layout_width="47dp"
         android:layout_height="43dp"
         android:layout_marginBottom="16dp"
@@ -48,7 +60,7 @@
         app:layout_constraintVertical_bias="0.447" />
 
     <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/button8"
+        android:id="@+id/accbtn"
         android:layout_width="47dp"
         android:layout_height="43dp"
         android:layout_marginBottom="16dp"
@@ -76,7 +88,7 @@
         app:layout_constraintVertical_bias="0.447" />
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/accdp"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView7"
@@ -87,4 +99,56 @@
         app:layout_constraintVertical_bias="0.32"
         app:shapeAppearanceOverlay="@style/Circular" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchR"
+        android:layout_width="400dp"
+        android:layout_height="660dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="390dp"
+        android:layout_height="52dp"
+        android:background="@drawable/grad_button"
+
+        android:queryHint="Search here"
+        app:iconifiedByDefault="false"
+        app:layout_constraintBottom_toBottomOf="@+id/searchR"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.122" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Search"
+        android:textColor="@color/black"
+
+        android:textSize="27sp"
+        app:layout_constraintBottom_toTopOf="@+id/searchView"
+        app:layout_constraintEnd_toStartOf="@+id/imageView5"
+        app:layout_constraintHorizontal_bias="0.82"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.904" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gif"
+        android:layout_width="303dp"
+        android:layout_height="439dp"
+        android:src="@drawable/gif"
+        app:layout_constraintBottom_toTopOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="@+id/searchR"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

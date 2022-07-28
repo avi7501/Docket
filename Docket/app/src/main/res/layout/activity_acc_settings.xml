@@ -46,7 +46,7 @@
 
 
     <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/button7"
+        android:id="@+id/searchbtn"
         android:layout_width="47dp"
         android:layout_height="43dp"
         android:layout_marginBottom="16dp"
@@ -60,7 +60,7 @@
         app:layout_constraintVertical_bias="0.447" />
 
     <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/button8"
+        android:id="@+id/accbtn"
         android:layout_width="47dp"
         android:layout_height="43dp"
         android:layout_marginBottom="16dp"
@@ -219,32 +219,40 @@
 
     <TextView
         android:id="@+id/userName"
-        android:layout_width="193dp"
-        android:layout_height="35dp"
+        android:layout_width="195dp"
+        android:layout_height="40dp"
         android:layout_marginStart="4dp"
+        android:ellipsize="marquee"
         android:fontFamily="@font/poppins"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/button"
         app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toEndOf="@+id/textView11"
         app:layout_constraintTop_toTopOf="@+id/button"
-        app:layout_constraintVertical_bias="0.563" />
+        app:layout_constraintVertical_bias="0.51" />
 
     <TextView
         android:id="@+id/userDisplayEmail"
         android:layout_width="249dp"
         android:layout_height="42dp"
         android:layout_marginStart="4dp"
+        android:ellipsize="marquee"
         android:fontFamily="@font/poppins"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
         android:textColor="#FFFFFF"
-        android:textSize="18sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/button10"
         app:layout_constraintEnd_toEndOf="@+id/button10"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toEndOf="@+id/textView13"
         app:layout_constraintTop_toTopOf="@+id/button10"
-        app:layout_constraintVertical_bias="0.444" />
+        app:layout_constraintVertical_bias="0.51" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

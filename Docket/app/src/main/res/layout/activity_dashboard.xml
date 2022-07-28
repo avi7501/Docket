@@ -107,7 +107,7 @@
         app:srcCompat="@drawable/gradient_background" />
 
     <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/button4"
+        android:id="@+id/homebtn"
         android:layout_width="47dp"
         android:layout_height="43dp"
         android:layout_marginBottom="16dp"
@@ -121,7 +121,7 @@
         app:layout_constraintVertical_bias="0.447" />
 
     <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/button7"
+        android:id="@+id/searchbtn"
         android:layout_width="47dp"
         android:layout_height="43dp"
         android:layout_marginBottom="16dp"
@@ -135,7 +135,7 @@
         app:layout_constraintVertical_bias="0.447" />
 
     <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/button8"
+        android:id="@+id/accbtn"
         android:layout_width="47dp"
         android:layout_height="43dp"
         android:layout_marginBottom="16dp"
@@ -179,7 +179,7 @@
         app:layout_constraintVertical_bias="0.553" />
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/accdp"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView7"

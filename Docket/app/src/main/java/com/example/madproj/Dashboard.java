@@ -9,17 +9,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -63,7 +57,7 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
 //        googleSignOut = findViewById(R.id.googleSignOutBtn);
 //        //Adding OnClickListener
 //        logout.setOnClickListener(this);
-        acc1=(ImageView) findViewById(R.id.button8);
+        acc1=(ImageView) findViewById(R.id.accbtn);
         acc1.setOnClickListener(this);
         // Initialize firebase auth
         firebaseAuth=FirebaseAuth.getInstance();
@@ -74,7 +68,17 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
         //Intializing Variable To Display UserName
         userNameDisplayText = findViewById(R.id.userDisplayName);
         userProfileImage = findViewById(R.id.userProfileImage);
-        accdp =findViewById(R.id.imageView9);
+        accdp =findViewById(R.id.accdp);
+        ImageView search =(ImageView)findViewById(R.id.searchbtn);
+        search.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent i =new Intent(Dashboard.this,Search.class);
+                Bundle bundle = getIntent().getExtras();
+                i.putExtra("isGAuth",bundle.getBoolean("isGAuth"));
+                startActivity(i);
+            }
+        });
 
         /*--Intializing Variables For Card Look--*/
         recyclerView = findViewById(R.id.courseListView);
@@ -188,7 +192,7 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.button8:
+            case R.id.accbtn:
                 Intent it = new Intent(Dashboard.this,AccSettings.class);
                 Bundle bundle = getIntent().getExtras();
                 it.putExtra("isGAuth",bundle.getBoolean("isGAuth"));
